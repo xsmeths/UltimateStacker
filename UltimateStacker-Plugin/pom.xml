@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.craftaro</groupId>
         <artifactId>UltimateStacker-Parent</artifactId>
-        <version>3.1.10</version>
+        <version>3.3.0</version>
     </parent>
     <artifactId>UltimateStacker-Plugin</artifactId>
 
@@ -16,7 +16,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.6.0</version>
 
                 <executions>
                     <execution>
@@ -55,10 +55,10 @@
                                     <excludeDefaults>false</excludeDefaults>
                                     <includes>
                                         <include>**/nms/v*/**</include>
+                                        <include>**/third_party/net/kyori/**</include>
                                     </includes>
                                     <excludes>
                                         <exclude>**/third_party/org/apache/**</exclude>
-                                        <exclude>**/third_party/net/kyori/**</exclude>
                                         <exclude>**/third_party/com/zaxxer/**</exclude>
                                         <exclude>**/third_party/org/jooq/**</exclude>
                                         <exclude>**/third_party/org/mariadb/**</exclude>
@@ -101,7 +101,7 @@
 
         <repository>
             <id>songoda-public</id>
-            <url>https://repo.craftaro.com/repository/public/</url>
+            <url>https://repo.songoda.com/repository/public/</url>
         </repository>
 
         <repository>
