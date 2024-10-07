@@ -243,11 +243,12 @@ public class UltimateStacker extends SongodaPlugin {
                 }
             }
         });
+        this.stackingTask = new StackingTask(this);
 
         //Start stacking task
         if (Settings.STACK_ENTITIES.getBoolean()) {
             this.breedingTask = new BreedingTask(this);
-            this.stackingTask = new StackingTask(this);
+            stackingTask.start();
         }
 
         this.instantStacking = Settings.STACK_ENTITIES.getBoolean() && Settings.INSTANT_STACKING.getBoolean();
@@ -291,8 +292,9 @@ public class UltimateStacker extends SongodaPlugin {
         if (stackingTask != null)
             this.stackingTask.cancel();
 
+        this.stackingTask = new StackingTask(this);
         if (Settings.STACK_ENTITIES.getBoolean()) {
-            this.stackingTask = new StackingTask(this);
+            stackingTask.start();
         }
 
         this.mobFile.load();

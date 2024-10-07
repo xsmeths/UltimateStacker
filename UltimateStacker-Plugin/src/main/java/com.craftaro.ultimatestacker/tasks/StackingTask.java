@@ -66,7 +66,9 @@ public class StackingTask extends BukkitRunnable {
             if (isWorldDisabled(world)) continue;
             loadedWorlds.add(new SWorld(world));
         }
+    }
 
+    public void start() {
         int tickRate = Settings.STACK_SEARCH_TICK_SPEED.getInt();
         runTaskTimerAsynchronously(plugin, tickRate, tickRate);
     }
